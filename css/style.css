@@ -18,99 +18,56 @@ body {
   flex-direction: column;
   min-height: 100vh;
   justify-content: center;
+  user-select: none;
 }
 
-/* NAV */
+/* LOGO Y NAV */
 header {
-  position: relative;
+  background-color: rgba(240, 240, 240, 0.792);
+  border-radius: 0px 0px 100px 100px;
+  -moz-border-radius: 0px 0px 100px 100px;
+  -webkit-border-radius: 0px 0px 100px 100px;
+  z-index: 10;
 }
-
-.nav1 {
-  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
-  height: 150px;
-  width: 100%;
-  top: 0;
-  left: 0;
+header img {
+  height: 80px;
+  width: 80px;
 }
-.nav1 .enlace {
-  position: absolute;
-  padding: 0 20px;
+header .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.nav1 .logo {
-  height: 120px;
-  margin-top: 10px;
-  margin-left: 20px;
-}
-.nav1 ul {
-  float: right;
-  margin-right: 10px;
-}
-.nav1 li {
-  display: inline-block;
-  margin: 45px 0;
-}
-.nav1 a {
-  display: inline-block;
+header a {
+  padding: 5px 12px;
   text-decoration: none;
-  width: 120px;
-  height: 60px;
-  line-height: 45px;
-  color: #fff;
-  margin-right: 35px;
-  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+}
+header nav {
+  display: flex;
+  flex-direction: column;
   text-align: center;
-  transition: all 300ms ease;
-  border-radius: 0px 167px 167px 167px;
-  -moz-border-radius: 0px 167px 167px 167px;
-  -webkit-border-radius: 0px 167px 167px 167px;
-  border: 0.5px solid #ffffff;
+  padding-bottom: 25px;
 }
-.nav1 :hover {
+header a:hover {
   color: rgb(166, 160, 32);
+  border-bottom: 1px solid black;
 }
 
-.checkbtn {
-  font-size: 30px;
-  color: #fff;
-  float: right;
-  line-height: 180px;
-  margin-right: 40px;
-  cursor: pointer;
-  display: none;
-}
-
-#check {
-  display: none;
-}
-
-@media (max-width: 1080px) {
-  .checkbtn {
-    display: block;
-  }
-  ul {
+@media (min-width: 720px) {
+  header {
     position: fixed;
     width: 100%;
-    height: 150vh;
-    text-align: center;
-    transition: all 0.3s;
-    background: #130c0c;
-    left: -100%;
-    top: 185px;
   }
-  li {
-    display: block;
-    margin: 30px 0;
-    line-height: 30px;
+  header .container {
+    flex-direction: row;
+    justify-content: space-between;
   }
-  a {
-    font-size: 16px;
-  }
-  :hover, li a.active {
-    background: none;
-    color: rgb(166, 160, 32);
-  }
-  #check:checked ~ ul {
-    left: 0;
+  header nav {
+    flex-direction: row;
+    padding-bottom: 0;
+    padding-right: 20px;
   }
 }
 /* FONDO TITULO  */
@@ -118,7 +75,7 @@ header {
   background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets2/images/fondo-principal.jpg");
   background-size: cover;
   background-position: center center;
-  height: 80vh;
+  height: 100vh;
 }
 
 .bg-primary {
@@ -128,6 +85,20 @@ header {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.usos {
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets2/images/georgian-bay-honey-pollen-and-propolis (1).jpg");
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+}
+
+.usos2 {
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets2/images/logistica-integrada (1).jpg");
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
 }
 
 /* SECTOR PRODUCTOS */
@@ -170,6 +141,7 @@ h2 {
   width: 100%;
   height: 30em;
   display: inline-block;
+  margin-bottom: 100px;
 }
 
 .container-mt-5 .col-sm-4 h3 {
@@ -182,61 +154,112 @@ h2 {
   margin: 1em 0;
 }
 
-/* GRID */
-.wrapper {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
-  grid-auto-rows: minmax(100px, auto);
-  width: 95%;
-  max-width: 1200px;
-  margin: 0 auto;
-  margin-bottom: 20px;
-}
-.wrapper .one {
-  grid-column: 1/1;
-  grid-row: 1;
-  text-align: center;
-  text-transform: uppercase;
-  color: rgb(166, 160, 32);
-  text-indent: 5px;
-  letter-spacing: 3px;
-  font-size: 2em;
-  margin: 1em 0;
-}
-.wrapper .two {
-  grid-column: 2/4;
-  grid-row: 1/4;
-}
-.wrapper .two img {
-  width: 95%;
-  height: 95%;
-}
-.wrapper .three {
-  grid-column: 1;
-  grid-row: 2/5;
-}
-.wrapper .five {
-  grid-column: 2;
-  grid-row: 4;
-}
-.wrapper .six {
-  grid-column: 3;
-  grid-row: 4;
+/* GALERIA */
+.carousel-inner {
+  width: 100%;
+  height: 100vh;
 }
 
-@media screen and (max-width: 330px) {
-  .wrapper {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-gap: 5px;
-    width: 75%;
+#demo {
+  padding-top: 100px;
+}
+
+.carousel-indicators {
+  font-size: 1.1em;
+  font-weight: bold;
+  padding: 10px 20px;
+  color: white;
+  margin-top: 0.5em;
+  box-shadow: none;
+}
+
+/* SECCION 2 */
+#somos-proya .container {
+  text-align: center;
+  padding: 100px 12px;
+  padding-top: 200px;
+}
+#somos-proya .container img {
+  height: 450px;
+  width: 450px;
+}
+#somos-proya .container h2 {
+  margin-top: 0;
+}
+
+@media screen and (max-width: 850px) {
+  #somos-proya .container {
+    text-align: center;
+    padding: 100px 12px;
+  }
+  #somos-proya .container img {
+    height: 250px;
+    width: 250px;
   }
 }
+/* SECCION 3 */
+#nuestros-programas {
+  background-color: rgb(255, 255, 255);
+  color: white;
+  text-align: center;
+  padding-bottom: 50px;
+}
+#nuestros-programas .container5 {
+  padding: 150px 10px;
+}
+#nuestros-programas h2 {
+  margin-top: 0;
+  font-size: 3em;
+}
+#nuestros-programas p {
+  display: none;
+}
+#nuestros-programas .carta {
+  background-size: cover;
+  background-position: center center;
+  padding: 50px;
+  margin: 15px;
+  border-radius: 20px;
+}
+#nuestros-programas .carta:first-child {
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets2/images/galeria3.jpg");
+}
+#nuestros-programas .carta:nth-child(2) {
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets2/images/galeria2.jpg");
+}
+#nuestros-programas .carta:nth-child(3) {
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets2/images/galeria1.jpg");
+}
+
+#nuestros-programas button {
+  font-size: 1.1em;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 2px solid rgb(27, 24, 24);
+  box-shadow: 2px 2px 10px rgb(27, 24, 24);
+  color: white;
+  background-color: rgb(206, 201, 101);
+  margin-top: 0.5em;
+}
+#nuestros-programas button:hover {
+  background-color: rgb(166, 160, 32);
+}
+
+.container {
+  max-width: 1400px;
+  margin: auto;
+}
+
+.color-acento {
+  color: rgb(166, 160, 32);
+}
+
 /* FORMULARIO */
 .form-flex {
   display: flex;
   padding-bottom: 20px;
+  padding-top: 120px;
 }
 .form-flex .form {
   background-color: white;
@@ -280,8 +303,7 @@ h2 {
 }
 
 .carousel-inner {
-  height: 80vh;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
 }
 
 /* FOOTER */
@@ -330,7 +352,7 @@ h2 {
   transition: all 300ms ease;
 }
 .pie-de-pagina a:hover {
-  color: tomato;
+  color: rgba(0, 0, 0, 0.59);
 }
 .pie-de-pagina .footer2 {
   padding: 10px 10px;
@@ -347,6 +369,60 @@ h2 {
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 30px;
     padding: 20px 0;
+  }
+}
+@media (min-width: 720px) {
+  header {
+    position: fixed;
+    width: 100%;
+  }
+  header .container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  header nav {
+    flex-direction: row;
+    padding-bottom: 0;
+    padding-right: 20px;
+  }
+  #hero h1 {
+    font-size: 4em;
+  }
+  #somos-proya .container {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .texto {
+    width: 50%;
+    max-width: 600px;
+    text-align: initial;
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #nuestros-programas .programas {
+    display: flex;
+    justify-content: center;
+  }
+  #nuestros-programas .programas p {
+    display: block;
+    margin-bottom: 30px;
+  }
+  #nuestros-programas .programas h3 {
+    margin-top: 0;
+  }
+  #nuestros-programas .programas .carta {
+    padding: 50px;
+  }
+  #final h2 {
+    font-size: 5em;
+  }
+  #final h2 button {
+    font-size: 2em;
+  }
+  #final h2 .container {
+    justify-content: flex-end;
   }
 }
 
